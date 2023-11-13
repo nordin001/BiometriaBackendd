@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+</head>
+<body onload="comprobarsesion()">
+    <h2>Registro de Usuario</h2>
+    <form >
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <br>
+        <br>
+
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <br>
+
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" required>
+        <br>
+        <br>
+
+        <label for="contrasenya">Contraseña:</label>
+        <input type="password" id="contrasenya" name="contrasenya" required>
+        <br>
+        <br>
+
+        <label for="confirmarcontrasenya">Confirmar Contraseña:</label>
+        <input type="password" id="confirmarcontrasenya" name="confirmarcontrasenya" required>
+        <br>
+        <br>
+
+        <input type="button" value="Registrarse" onclick="registro()">
+    </form>
+    <br>
+    <br>
+    <a href="landing.html">Landing</a>
+
+    <br>
+    <br>
+    <a href="login.html">Login</a>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./js/server.js"></script>
+    
+</body>
+</html>
