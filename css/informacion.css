@@ -1,0 +1,107 @@
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 52px;
+    transform: rotate(0deg);
+    border-radius: 0;
+    padding: 2px;
+    opacity: 1;
+    background-color: #a6cde4;
+}
+
+
+.container {
+    padding: 0; 
+    display: flex;
+    justify-content: center; /* 将内容水平居中 */
+    align-items: center; /* 将内容垂直居中 */
+    width: 100%; /* 占据屏幕宽度的 85% */
+    height: 100vh; /* 占据视口高度的 85% */
+}
+
+.rectangle {
+    width: 60%; /* 设置长方形的宽度为容器宽度的 60% */
+    height: 80%; /* 设置长方形的高度为容器高度的 80% */
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #a6cde4;
+    box-sizing: border-box;
+    margin: 8px; /* 设置长方形之间的间距，根据需要进行调整 */
+    display: flex; /* 使用 Flexbox 布局 */
+    justify-content: center; /* 将小长方形水平居中 */
+    align-items: center; /* 将小长方形垂直居中 */
+    box-shadow: 5px 5px 5px 0px;
+}
+
+
+.inner-rectangle {
+    width: 105%; /* 设置内部长方形的宽度为容器宽度的 90% */
+    height: 100%; /* 设置内部长方形的高度为容器高度的 90% */
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    margin: 2px; /* 设置内部小长方形和外部长方形之间的间距，根据需要进行调整 */
+    display: flex; /* 使用 Flexbox 布局 */
+    flex-direction: column; /* 垂直排列子元素 */
+    align-items: center; /* 将子元素垂直居中 */
+}
+
+img {
+    width: 60%;
+    aspect-ratio: 1 / 1; /* 设置宽高比为 1:1 */
+ 
+}
+
+
+
+.text {
+    font-size: 15px;
+    width: 90%;
+    padding: 10px;
+    border-radius: 0 0 20px 20px;
+    background-color: #fff;
+
+}
+
+
+@media (max-width: 1600px) {
+    .text {
+        font-size: 13px; /* 在屏幕宽度小于等于1200px时，字号缩小为14px */
+    }
+}
+
+@media (max-width: 1200px) {
+    .text {
+        font-size: 8px; /* 在屏幕宽度小于等于992px时，字号缩小为12px */
+    }
+}
+
+@media (max-width: 860px) {
+    .container {
+        flex-direction: column; /* 切换为垂直排列 */
+        width: 100%;
+        height:auto;
+    }
+
+    .rectangle {
+        width: 90%; /* 适当调整长方形的宽度 */
+      
+       
+    }
+
+    .inner-rectangle {
+        width: 100%; /* 内部长方形宽度自适应 */
+    }
+
+    img {
+        width: 30%;
+        aspect-ratio: 1 / 1; /* 设置宽高比为 1:1 */
+     
+    }
+}
+
+
+
