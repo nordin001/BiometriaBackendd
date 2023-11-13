@@ -14,3 +14,4 @@
     {
         die("Failed to conection" . $mysql->connect_error);
     }
+    ?>
