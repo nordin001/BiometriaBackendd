@@ -321,4 +321,15 @@ async function comprobarsesion()
     });
 }
 
+//---------------------------------------------------------------------------------------------------------------------
+//       a simple function for testing the tests :)
+//---------------------------------------------------------------------------------------------------------------------
 
+const addNumbers = (a, b) => {
+    return a + b;
+  };
+
+  //es importante meter las funciones que vamos a usar aqui
+  module.exports = {
+    addNumbers,
+  };
