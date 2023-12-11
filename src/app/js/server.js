@@ -141,8 +141,15 @@ function login() {
             },
             success: async function (data) {
                 if (!data.error) {
+                    if(email=="admin@gmail.com")
+                    {
+                        window.location.href="admin.html";
+                    }
+                    else
+                    {
+                        window.location.href="landing.html";
+                    }
                     //alert(data.message); // Display the success message
-                    window.location.href="landing.html";
                 } else {
                     alert('Error: ' + data.message); // Display the error message
                 }
@@ -213,6 +220,14 @@ async function hola()
         if (userId !== null) {
             document.getElementById('hola').innerHTML = "Hola " + userId;
             document.getElementById('logout').textContent ="LogOut";
+            if(userId != "admin@gmail.com")
+            {
+                document.getElementById('admin').textContent = "";
+            }
+            else
+            {
+                document.getElementById('admin').textContent = "admin";
+            }
         }
         else{
             document.getElementById('hola').innerHTML = "Hola, no has iniciado sesion";
@@ -398,6 +413,20 @@ async function comporbarcodigo()
         }
     });
 }
+async function admin()
+{
+    $(document).ready(async function () {
+        const userId = await obtenerUserId();
+        if (userId !== "admin@gmail.com") {  
+            window.location.href="landing.html";
+        }
+        else{
+            return;
+        }   
+    });
+}
+
+
 //---------------------------------------------------------------------------------------------------------------------
 //       Tallal:we have to separate functions to smallee portions , in order to test them easly 
 //---------------------------------------------------------------------------------------------------------------------
