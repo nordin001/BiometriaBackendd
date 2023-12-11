@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa</title>
+    <style>
+        #map {
+            height: 100%;
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./js/mapa.js"></script>
+    <script src="./js/server.js"></script>
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADW33LRTXZSEmLMv8ebiwK8Dtb9gDsg5Y&callback=initMap">
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin</title>
+</head>
+<body onload="admin()">
+    <h2 onload="listaUsuarios()">Administración de usuarios</h2>
+    <div id="listaUsuarios">
+        <input id="buscador" type="text" placeholder="Buscar por nombre o correo" oninput="filtrarUsuarios()">
+        <table id="tablaUsuario">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Teléfono</th>
+                    <th>Correo</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="listado-Usuarios">
+            </tbody>
+        </table>
+    </div>
+
+    <br>
+    <br>
+    <a href="landing.html">Landing</a>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./js/server.js"></script>
+    <script src="./js/listaUsuarios.js"></script>
+</body>
+</html>
