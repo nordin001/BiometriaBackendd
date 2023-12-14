@@ -26,7 +26,7 @@ if ($consulta->fetch()) {
     }
 } else {
     // El usuario no se encontr� en la base de datos
-    echo "";
+    echo "Usuario no encontrado";
 }
 
 $consulta->close();

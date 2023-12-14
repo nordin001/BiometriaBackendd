@@ -47,8 +47,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
         $mail->addAddress($email);
         $mail->isHTML(true);
         $mail->Subject  = 'Verificar correo para crear cuenta de Ozouna';
-        $mail_template="<h2>Te has registado en Ozouna</h2>
-                <h3>Introduce el siguinte codigo para verificar tu correo</h3s>
+        $mail_template="<h2>Gracias por registrarte en Ozouna</h2>
+                <h3>Introduce el siguiente código para verificar tu correo</h3s>
                 <h1>$clave</h1>
                 <br/><br/>";
         $mail->Body  = $mail_template;

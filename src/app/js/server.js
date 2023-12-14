@@ -1,4 +1,3 @@
-
 //-----------------------------------------------------------------------------------------------------------
 //              recuperarprueba()
 //-----------------------------------------------------------------------------------------------------------
@@ -87,7 +86,7 @@ function actualizarusuario() {
             $.ajax({
                 url: '../api/actualizarusuario.php', // Ruta al script PHP
                 type: 'POST',
-                data: { email: email, nombreyapellidos: nombre, emailantiguo:userId},
+                data: { email: email, nombreyapellidos: nombre, emailantiguo: userId },
                 dataType: 'json',
                 success: async function (data) {
                     console.log(data);
@@ -97,7 +96,7 @@ function actualizarusuario() {
                     console.log(arguments)
                 }
             });
-    
+
             $.ajax({
                 url: '../api/actualizartelefono.php', // Ruta al script PHP
                 type: 'POST',
@@ -113,8 +112,7 @@ function actualizarusuario() {
                 }
             });
         }
-        else
-        {
+        else {
             console.log("No has inciado sesion");
         }
 
@@ -141,8 +139,13 @@ function login() {
             },
             success: async function (data) {
                 if (!data.error) {
+                    if (email == "admin@gmail.com") {
+                        window.location.href = "admin.html";
+                    }
+                    else {
+                        window.location.href = "landing.html";
+                    }
                     //alert(data.message); // Display the success message
-                    window.location.href="landing.html";
                 } else {
                     alert('Error: ' + data.message); // Display the error message
                 }
@@ -158,16 +161,16 @@ function login() {
 //-------------------------------------------------------------------------------------------------------
 //        email:text, nombreyapellidos:text, telefono:text, contrasenya:text -> registro()
 //-------------------------------------------------------------------------------------------------------
-function registro(email,nombre,contrasenya,telefono) {
+function registro(email, nombre, contrasenya, telefono) {
     $(document).ready(function () {
         $.ajax({
             url: '../api/registro.php', // Ruta al script PHP
             type: 'POST',
-            data: { email: email, nombreyapellidos: nombre, contrasenya: contrasenya , telefono: telefono},
+            data: { email: email, nombreyapellidos: nombre, contrasenya: contrasenya, telefono: telefono },
             dataType: 'json',
             success: async function (data) {
                 alert("El usuario se creo correctamente")
-                window.location.href="login.html";
+                window.location.href = "login.html";
             },
             error: function () {
                 console.log('Error al obtener el valor.');
@@ -183,10 +186,10 @@ function registro(email,nombre,contrasenya,telefono) {
 //-------------------------------------------------------------------------------------------------------
 async function obtenerUserId() {
     const response = await fetch('../api/userid.php'); // Ruta al script PHP que obtiene $_SESSION['user_id']
-    
+
     if (response.ok) {
         const userId = await response.text();
-        
+
         if (userId !== 'null') {
             // El valor de $_SESSION['user_id'] se ha recuperado con éxito
             return userId;
@@ -204,23 +207,28 @@ async function obtenerUserId() {
 //-------------------------------------------------------------------------------------------------------
 //         hola()
 //-------------------------------------------------------------------------------------------------------
-async function hola()
-{
+async function hola() {
     $(document).ready(async function () {
 
         // Hacer la solicitud al servidor
         const userId = await obtenerUserId();
         if (userId !== null) {
             document.getElementById('hola').innerHTML = "Hola " + userId;
-            document.getElementById('logout').textContent ="LogOut";
+            document.getElementById('logout').textContent = "LogOut";
+            if (userId != "admin@gmail.com") {
+                document.getElementById('admin').textContent = "";
+            }
+            else {
+                document.getElementById('admin').textContent = "admin";
+            }
         }
-        else{
+        else {
             document.getElementById('hola').innerHTML = "Hola, no has iniciado sesion";
             document.getElementById('editu').textContent = "";
-            document.getElementById('logout').textContent ="IniciarSesion";
+            document.getElementById('logout').textContent = "IniciarSesion";
 
 
-        }   
+        }
     });
 }
 
@@ -232,7 +240,7 @@ async function cambiarContrasenya() {
         var contrasenyaactual = document.getElementById('contrasenyaactual').value;
         var nuevacontrasenya = document.getElementById('nuevacontrasenya').value;
         var confirmarcontrasenya = document.getElementById('confirmarcontrasenya').value;
-        
+
         $.ajax({
             url: '../api/cambiarcontrasenya.php', // Ruta al script PHP
             type: 'POST',
@@ -241,7 +249,7 @@ async function cambiarContrasenya() {
             success: async function (data) {
                 if (!data.error) {
                     alert(data.message); // Display the success message
-                    window.location.href="landing.html";
+                    window.location.href = "landing.html";
                 } else {
                     alert('Error: ' + data.message); // Display the error message
                 }
@@ -258,15 +266,14 @@ async function cambiarContrasenya() {
 //-------------------------------------------------------------------------------------------------------
 //        email:text, nuevacontrasenya:text, confirmarcontrasenya:text -> cambiarContrasenya()
 //-------------------------------------------------------------------------------------------------------
-async function recuperarcontrasenya()
-{
+async function recuperarcontrasenya() {
     $(document).ready(async function () {
         var url = window.location.href;
         var searchParams = new URLSearchParams(new URL(url).search);
         var email = atob(searchParams.get('email'));
         var nuevacontrasenya = document.getElementById('nuevacontrasenya').value;
         var confirmarcontrasenya = document.getElementById('confirmarcontrasenya').value;
-        
+
         $.ajax({
             url: '../api/recuperarcontrasenya.php', // Ruta al script PHP
             type: 'POST',
@@ -275,7 +282,7 @@ async function recuperarcontrasenya()
             success: async function (data) {
                 if (!data.error) {
                     alert(data.message); // Display the success message
-                    window.location.href="landing.html";
+                    window.location.href = "landing.html";
                 } else {
                     alert('Error: ' + data.message); // Display the error message
                 }
@@ -288,26 +295,144 @@ async function recuperarcontrasenya()
     });
 }
 
+async function recuperartodasmedicionesusuario(userId) {
+    return new Promise((resolve, reject) => {
+        $.ajax({
+            url: '../api/recuperartodasmedicionesusuario.php',
+            type: 'GET',
+            data: { email: userId },
+            dataType: 'json',
+            success: function (data) {
+                resolve(data);
+            },
+            error: function () {
+                console.log('Error al obtener el valor.');
+                console.log(arguments);
+                reject(); // Rechaza la promesa si hay un error
+            }
+        });
+    });
+}
+
+async function recuperartodasmediciones() {
+    return new Promise((resolve, reject) => {
+        $.ajax({
+            url: '../api/recuperartodasmediciones.php',
+            type: 'GET',
+            dataType: 'json',
+            success: async function (data) {
+                resolve(data);
+            },
+            error: function () {
+                console.log('Error al obtener el valor.');
+                console.log(arguments);
+                reject(); // Rechaza la promesa si hay un error
+            }
+        });
+    });
+}
+
+async function recuperarusuariomedicion(userId) {
+    return new Promise((resolve, reject) => {
+        $.ajax({
+            url: '../api/recuperarusuariomedicion.php',
+            type: 'GET',
+            data: { email: userId },
+            dataType: 'json',
+            success: async function (data) {
+                resolve(data);
+            },
+            error: function () {
+                console.log('Error al obtener el valor.');
+                console.log(arguments);
+                reject(); // Rechaza la promesa si hay un error
+            }
+        });
+    });
+}
+
+async function recuperarmedicion(medicion)
+{
+    return new Promise((resolve, reject) => {
+    $.ajax({
+        url: '../api/recuperarmedicion.php',
+        type: 'GET',
+        data: { idmedicion: medicion.idmedicion },
+        dataType: 'json',
+        success: async function (data) {
+            resolve(data);
+            },
+            error: function () {
+                console.log('Error al obtener el valor.');
+                console.log(arguments);
+                reject(); // Rechaza la promesa si hay un error
+            }
+        });
+    });
+}
+
+async function recuperarmediciontiempo(desde,hasta)
+{
+    return new Promise((resolve, reject) => {
+    $.ajax({
+        url: '../api/recupermediciontiempo.php',
+        type: 'GET',
+        data: { desde: desde, hasta: hasta },
+        dataType: 'json',
+        success: async function (data) {
+            resolve(data);
+            },
+            error: function () {
+                console.log('Error al obtener el valor.');
+                console.log(arguments);
+                reject(); // Rechaza la promesa si hay un error
+            }
+        });
+    });
+}
+
+async function recuperarmediciontiempousuario(desde,hasta,email)
+{
+    return new Promise((resolve, reject) => {
+    $.ajax({
+        url: '../api/recuperarmediciontiempousuario.php',
+        type: 'GET',
+        data: { desde: desde, hasta: hasta , email: email},
+        dataType: 'json',
+        success: async function (data) {
+            resolve(data);
+            },
+            error: function () {
+                console.log('Error al obtener el valor.');
+                console.log(arguments);
+                reject(); // Rechaza la promesa si hay un error
+            }
+        });
+    });
+}
+
 //-------------------------------------------------------------------------------------------------------
 //        comprobarsesion()
 //-------------------------------------------------------------------------------------------------------
-async function comprobarsesion()
-{
+async function comprobarsesion() {
     $(document).ready(async function () {
 
         // Hacer la solicitud al servidor
         const userId = await obtenerUserId();
-        if (userId !== null) {  
-            window.location.href="landing.html";
+        if (userId !== null) {
+            window.location.href = "landing.html";
         }
-        else{
+        else {
             return;
-        }   
+        }
     });
 }
 
-async function enviarcorreocontrasenya()
-{
+
+//-------------------------------------------------------------------------------------------------------
+//        email:text -> enviarcorreocontrasenya()
+//-------------------------------------------------------------------------------------------------------
+async function enviarcorreocontrasenya() {
     $(document).ready(async function () {
         var email = document.getElementById('email').value;
         var email_codificado = btoa(email);
@@ -315,7 +440,7 @@ async function enviarcorreocontrasenya()
         $.ajax({
             url: '../api/enviaremailcontrasenya.php', // Ruta al script PHP
             type: 'POST',
-            data: { email: email , email_codificado : email_codificado},
+            data: { email: email, email_codificado: email_codificado },
             dataType: 'json',
             success: async function (data) {
                 if (!data.error) {
@@ -332,8 +457,11 @@ async function enviarcorreocontrasenya()
     });
 }
 
-async function enviarcorreoverificar()
-{
+
+//-------------------------------------------------------------------------------------------------------
+//        email:text -> enviarcorreoverificar()
+//-------------------------------------------------------------------------------------------------------
+async function enviarcorreoverificar() {
     $(document).ready(async function () {
         var email = document.getElementById('email').value;
         var nombre = document.getElementById('nombre').value;
@@ -345,27 +473,27 @@ async function enviarcorreoverificar()
         var codigo = Math.floor(10000000 + Math.random() * 90000000);
         var numeroCodificado = btoa(codigo.toString());
 
-            if (email === "" || nombre === "" || contrasenya === "" || telefono === "" || confirmarcontrasenya === "") {
-                alert("Por favor, complete todos los campos.");
-                return;
-            }
-            if (contrasenya !== confirmarcontrasenya) {
-                alert("La confirmación de la contraseña no coincide.");
-                return;
-            } if (!terminosCheckbox.checked) {
-                alert("Debes aceptar los términos y condiciones para registrarte.");
-                return; // Detiene el envío del formulario si los términos no están aceptados
-            }
+        if (email === "" || nombre === "" || contrasenya === "" || telefono === "" || confirmarcontrasenya === "") {
+            alert("Por favor, complete todos los campos.");
+            return;
+        }
+        if (contrasenya !== confirmarcontrasenya) {
+            alert("La confirmación de la contraseña no coincide.");
+            return;
+        } if (!terminosCheckbox.checked) {
+            alert("Debes aceptar los términos y condiciones para registrarte.");
+            return; // Detiene el envío del formulario si los términos no están aceptados
+        }
         $.ajax({
             url: '../api/enviaremailverificar.php',
             type: 'POST',
-            data: { email: email, numeroCodificado: numeroCodificado, codigo: codigo, nombreyapellidos: btoa(nombre), contrasenya:  btoa(contrasenya) , telefono: btoa(telefono), emailc:btoa(email)},
+            data: { email: email, numeroCodificado: numeroCodificado, codigo: codigo, nombreyapellidos: btoa(nombre), contrasenya: btoa(contrasenya), telefono: btoa(telefono), emailc: btoa(email) },
             dataType: 'json',
             success: async function (data) {
                 if (!data.error) {
-                    alert(data.message); 
+                    alert(data.message);
                 } else {
-                    alert('Error: ' + data.message); 
+                    alert('Error: ' + data.message);
                 }
             },
             error: function () {
@@ -377,27 +505,46 @@ async function enviarcorreoverificar()
 
 }
 
-async function comporbarcodigo()
-{
+//-------------------------------------------------------------------------------------------------------
+//         comporbarcodigo()
+//-------------------------------------------------------------------------------------------------------
+
+async function comporbarcodigo() {
     $(document).ready(async function () {
         var codigo1 = document.getElementById('codigo1').value;
         var url = window.location.href;
         var searchParams = new URLSearchParams(new URL(url).search);
         var codigourl = atob(searchParams.get('codigo'));
-        if(codigo1 == codigourl)
-        {
+        if (codigo1 == codigourl) {
             var nombre = atob(searchParams.get('nombre'));
             var telefono = atob(searchParams.get('telefono'));
             var contrasenya = atob(searchParams.get('contrasenya'));
             var email = atob(searchParams.get('email'));
-            registro(email,nombre,contrasenya,telefono);
+            registro(email, nombre, contrasenya, telefono);
 
         }
         else {
-            alert('Error: ' + "El codigo no coincide"); 
+            alert('Error: ' + "El codigo no coincide");
         }
     });
 }
+
+//-------------------------------------------------------------------------------------------------------
+//         admin()
+//-------------------------------------------------------------------------------------------------------
+async function admin() {
+    $(document).ready(async function () {
+        const userId = await obtenerUserId();
+        if (userId !== "admin@gmail.com") {
+            window.location.href = "landing.html";
+        }
+        else {
+            return;
+        }
+    });
+}
+
+
 //---------------------------------------------------------------------------------------------------------------------
 //       Tallal:we have to separate functions to smallee portions , in order to test them easly 
 //---------------------------------------------------------------------------------------------------------------------

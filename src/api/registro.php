@@ -1,20 +1,15 @@
 <?php	
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-require '../phpmailer/src/Exception.php';
-require '../phpmailer/src/PHPMailer.php';
-require '../phpmailer/src/SMTP.php';
 //-------------------------------------------------------------------------------------------------------
 //          Email:text, contrasenya:text, nombreyapellidos:text, telefono:text --> registro()
 //-------------------------------------------------------------------------------------------------------
     if($_SERVER['REQUEST_METHOD'] == 'POST')
     {
         require_once("db.php");
+
         $email = $_POST['email'];
         $contrasenya = password_hash($_POST['contrasenya'], PASSWORD_BCRYPT);
+        $nombreyapellidos = $_POST['nombreyapellidos'];
         $telefono = $_POST['telefono'];
-        $nombreyapellidos =  $_POST['nombreyapellidos'];
 
         $query = "INSERT INTO usuario (email, contrasenya, nombreyapellidos) VALUES ('$email', '$contrasenya', '$nombreyapellidos')";
 
@@ -22,7 +17,6 @@ require '../phpmailer/src/SMTP.php';
 
         if($result == true)
         {
-
             $query = "INSERT INTO telefono (email, telefono) VALUES ('$email', '$telefono')";
 
             $result = $mysql->query($query);
@@ -34,8 +28,6 @@ require '../phpmailer/src/SMTP.php';
             {
                 echo json_encode("Ocurrio un error al crear el telefono");
             }
-
-
             
         }else
         {

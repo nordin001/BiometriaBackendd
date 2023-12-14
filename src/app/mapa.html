@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa</title>
+    <style>
+        #map {
+            height: 75%;
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <div>
+        <input type="checkbox" id="baja" name="nivel" value="baja" onchange="pintar()"> Baja
+        <input type="checkbox" id="media" name="nivel" value="media" onchange="pintar()"> Media
+        <input type="checkbox" id="alta" name="nivel" value="alta" onchange="pintar()"> Alta
+        <label for="desde">Desde:</label>
+        <input type="datetime-local" id="desde" name="desde" onchange="pintar()">
+        <label for="hasta">Hasta:</label>
+        <input type="datetime-local" id="hasta" name="hasta" onchange="pintar()">
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./js/mapa.js"></script>
+    <script src="./js/server.js"></script>
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADW33LRTXZSEmLMv8ebiwK8Dtb9gDsg5Y&libraries=visualization&callback=centrarmapa">
+</script>
+</body>
+</html>

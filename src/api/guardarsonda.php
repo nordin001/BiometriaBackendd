@@ -1,29 +1,22 @@
-<?php
+<?php	
     //-------------------------------------------------------------------------------------------------------
-    //          email:text --> actualizarusuario()
+    //          Instante:datetime, latitud:R, longitud:R, valor:R,  idcontaminante:R --> guardarmedicion()
     //-------------------------------------------------------------------------------------------------------
-
     if($_SERVER['REQUEST_METHOD'] == 'POST')
     {
         require_once("db.php");
-        $email = $_POST["email"];
-        $emailantiguo = $_POST["emailantiguo"];
-        $nombreyapellidos = $_POST["nombreyapellidos"];
-
-        $query = "UPDATE usuario  SET nombreyapellidos='$nombreyapellidos', email='$email' WHERE email='$emailantiguo'";
+        
+        $query = "INSERT INTO sonda";
 
         $result = $mysql->query($query);
 
         if($result == true)
         {
-            echo json_encode("El usuario se actualizo coreectamente");
+            echo json_encode("La sonda se creo coreectamente");
         }else
         {
             echo json_encode("Error");
         }
 
         $mysql->close();
-
     }
-
-    

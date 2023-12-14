@@ -40,7 +40,7 @@ require '../phpmailer/src/SMTP.php';
             $mail_template="<h2>Cambiar contraseña</h2>
                             <h3>Haz click en el siguiente enlace para cambiar la contraseña</h3>
                             <br/><br/>
-                            <a href='http://localhost/proyecto_3a/src/app/recuperarcontrasenya.html?email=$emailEncoded'>Cambiar Contraseña</a>";
+                            <a href='http://localhost/BiometriaBackendd/src/app/recuperarcontrasenya.html?email=$emailEncoded'>Cambiar Contraseña</a>";
             $mail->Body  = $mail_template;
             $mail->send();
             $response['message'] = "Se ha enviado un email a " . $email;

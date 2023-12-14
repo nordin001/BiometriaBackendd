@@ -49,11 +49,11 @@ require '../phpmailer/src/SMTP.php';
             $mail->addAddress($email);
             $mail->isHTML(true);
             $mail->Subject  = 'Verificar correo para crear cuenta de Ozouna';
-            $mail_template="<h2>Te has registado en Ozouna</h2>
-                        <h3>Introduce el siguinte codigo para verificar tu correo</h3s>
+            $mail_template="<h2>Gracias por registrarte en Ozouna</h2>
+                        <h3>Introduce el siguiente código para verificar tu correo</h3s>
                         <h1>$codigo</h1>
                         <br/><br/>
-                        <a href='http://localhost/proyecto_3a/src/app/verificarcorreo.html?codigo=$numeroCodificado&nombre=$nombreyapellidos&telefono=$telefono&contrasenya=$contrasenya&email=$emailc'>Introducir codigo</a>";
+                        <a href='http://localhost/BiometriaBackendd/src/app/verificarcorreo.html?codigo=$numeroCodificado&nombre=$nombreyapellidos&telefono=$telefono&contrasenya=$contrasenya&email=$emailc'>Introducir codigo</a>";
             $mail->Body  = $mail_template;
             $mail->send();
             $response['message'] = "Se ha enviado un email a " . $email;
