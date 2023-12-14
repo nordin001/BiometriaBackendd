@@ -49,9 +49,11 @@
     align-items: center; /* 将子元素垂直居中 */
 }
 
-img {
+.icon {
     width: 60%;
     aspect-ratio: 1 / 1; /* 设置宽高比为 1:1 */
+    border-radius: 30px; /* 设置圆角半径 */
+    border: 0px solid #000; /* 设置边框宽度和颜色 */
  
 }
 
@@ -59,14 +61,16 @@ img {
 
 .text {
     font-size: 15px;
-    width: 90%; /* 可以根据需要调整宽度的百分比 */
-    aspect-ratio: 1/1; 
+    width: 90%;
+    aspect-ratio: 1/1;
     padding: 10px;
     border-radius: 0 0 20px 20px;
     background-color: #fff;
     overflow: auto;
- 
+    margin-top: 15px; /* 调整间距的值根据需要 */
+    margin-right: 5px;
 }
+
 
 /* Customizing the scrollbar */
 .text::-webkit-scrollbar {
@@ -84,29 +88,82 @@ img {
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
+.nivel {
+    box-sizing: border-box;
+    height: 25%;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+}
+
+.innivel {
+    flex: 1;
+    height: 100%; /* 设置 .innivel 的高度为 100% */
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.xiao {
+    width: 16%;/* 设置 .xiao 的高度为 100% */
+    aspect-ratio: 1 / 1; /* 设置宽高比为 1:1 */
+}
+
+.niveltext {
+    margin-left: 10px;
+    font-size: 15px;
+}
+
+
+
+
+
+
+
+  
+
 
 
 @media (max-width: 1600px) {
-    .text {
+    .text  {
+        font-size: 13px; /* 在屏幕宽度小于等于1200px时，字号缩小为14px */
+    }
+    .niveltext {
         font-size: 13px; /* 在屏幕宽度小于等于1200px时，字号缩小为14px */
     }
 }
 
 @media (max-width: 1200px) {
-    .text {
+    .text  {
+        font-size: 8px; /* 在屏幕宽度小于等于992px时，字号缩小为12px */
+    }
+    .niveltext {
         font-size: 8px; /* 在屏幕宽度小于等于992px时，字号缩小为12px */
     }
 }
 
 @media (max-width: 860px) {
     .container {
+        margin-top: 55px;
         flex-direction: column; /* 切换为垂直排列 */
         width: 100%;
         height:auto;
     }
 
-    .rectangle {
+    .rectangle  {
         width: 90%; /* 适当调整长方形的宽度 */
+      
+       
+    }
+
+    .text{
+        width: 90%;
+        height: 60%;
+        font-size: 13px;
+    }
+    .nivel {
+        width: 100%; /* 适当调整长方形的宽度 */
+        height: 8%;
       
        
     }
@@ -114,11 +171,19 @@ img {
     .inner-rectangle {
         width: 100%; /* 内部长方形宽度自适应 */
     }
+    .niveltext {
+        width: 100%; /* 内部长方形宽度自适应 */
+        font-size: 13px;
+    }
 
-    img {
-        width: 30%;
+    .icon {
+        width: 20%;
         aspect-ratio: 1 / 1; /* 设置宽高比为 1:1 */
+        margin-left: 10px;
      
+    }
+    .niveltext{
+        margin-left: 30px;
     }
 }
 
