@@ -1,0 +1,147 @@
+
+
+#map {
+  height: calc(100vh - 170px); /* Ajusta la altura según sea necesario, teniendo en cuenta el tamaño de la barra de búsqueda y otros elementos */
+  z-index: 1;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+#checkbox-container input[type="checkbox"] {
+  margin-bottom: 5px;
+  margin-right: 15px;
+}
+
+/* Estilos específicos para el checkbox con id "baja" */
+#baja {
+  padding-right: 19px;
+}
+
+
+/* Estilos adicionales para hacer el input y los checkbox más redondos */
+#checkbox-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px; /* Ajusta la distancia desde la parte derecha según sea necesario */
+  z-index: 4;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 20px;
+}
+
+
+
+#checkbox-container input[type="checkbox"] {
+  margin-bottom: 5px; /* Espaciado entre los checkboxes */
+}
+
+/* Resto del código CSS permanece sin cambios */
+
+/* Estilos globales para el resto del sitio (puedes agregar más aquí) */
+* {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+}
+/* Reset de estilos y ajuste del tamaño de la fuente base */
+body, html, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+}
+
+/* Estilo de la barra de búsqueda */
+.search-bar {
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  z-index: 4;
+  display: flex;
+}
+/* Estilo de la entrada de búsqueda */
+.search-input input {
+  width: 100%;
+  padding: 8px;
+}
+
+/* Estilo del selector de fechas */
+.date-picker {
+  display: flex;
+  align-items: center;
+}
+
+.date-input {
+  padding: 8px;
+}
+
+.calendar-icon {
+  margin: 0 8px;
+}
+
+/* Estilo del menú desplegable */
+.dropdown select {
+  padding: 7px;
+}
+
+/* Estilos responsive utilizando @media queries */
+@media (max-width: 1200px) {
+  .search-input input,
+  .date-input,
+  .dropdown select {
+    padding: 7px;
+    font-size: 16px;
+  }
+
+  .search-input input {
+    font-size: 16px;
+  }
+
+  .dropdown select {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .search-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* Puedes agregar más reglas @media según tus necesidades */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  max-width: 100%;
+}
+
+.search-input,
+.date-picker,
+.dropdown {
+  flex: 1;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+@media (min-width: 768px) {
+  .search-bar {
+    flex-wrap: nowrap;
+  }
+}
