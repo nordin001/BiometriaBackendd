@@ -26,7 +26,7 @@
 
 </head>
 
-<body>
+<body >
 <!-- Main Container -->
 <div class="main">
   <!-- Header Section -->
@@ -123,6 +123,13 @@
         <option value="opcion3">Opción 3</option>
       </select>
     </div>
+    <div id="botonsico">
+    <div class="icon-container">
+      <div class="rounded-icon">
+        <i class="fas fa-chart-bar icon"></i>
+      </div>
+    </div>
+    </div>
   </div>
 </div>
 
@@ -191,6 +198,13 @@
         menuContainer.style.display = 'none';
       }
     });
+  });
+</script>
+<script>
+  // Agrega un evento de clic al icono de la gráfica
+  document.getElementById('botonsico').addEventListener('click', function () {
+    // Abre la nueva página HTML al hacer clic en el icono
+    window.location.href = 'grafica.html';
   });
 </script>
 </body>
