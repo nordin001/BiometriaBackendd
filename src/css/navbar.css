@@ -267,3 +267,39 @@
     padding: 16px;
   }
 }
+.page-nav a,
+.page-btn-group a,
+.page-text06,
+.page-text07,
+.page-text08,
+.page-text09,
+.page-text10 {
+  text-decoration: none; /* Evita el subrayado */
+  color: inherit; /* Hereda el color del texto del elemento padre */
+}
+
+.page-nav a:hover,
+.page-btn-group a:hover,
+.page-text06:hover,
+.page-text07:hover,
+.page-text08:hover,
+.page-text09:hover,
+.page-text10:hover {
+  text-decoration: none; /* Evita el subrayado al pasar el ratón por encima */
+  color: inherit; /* Hereda el color del texto del elemento padre */
+}
+
+.page-text09 {
+  color: #004aad; /* Color azul para el texto 9 */
+  font-style: normal;
+  font-family: Poppins;
+  font-weight: 500;
+}
+
+.page-text10 {
+  color: #004aad; /* Color azul para el texto 10 */
+  font-style: normal;
+  margin-top: var(--dl-space-space-unit);
+  font-family: Poppins;
+  font-weight: 500;
+}

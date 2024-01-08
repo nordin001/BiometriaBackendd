@@ -5,48 +5,41 @@
     <title>Exported Project</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
-    <meta property="twitter:card" content="summary_large_image" />
-
     <!-- Include Stylesheets -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha256-XXXXXX" crossorigin="anonymous" />
-    <link href="../css/index.css" rel="stylesheet" />
     <link href="../css/style.css" rel="stylesheet" />
     <link href="../css/navbar.css" rel="stylesheet" />
     <link href="../css/index.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha256-XXXXXX" crossorigin="anonymous" />
-    <link href="../css/style.css" rel="stylesheet" />
-    <link href="../css/navbar.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha256-TU_INTEGRIDAD_CORRECTA" crossorigin="anonymous" />
 
+    <style>
+        /* Puedes agregar estilos adicionales aquí según sea necesario */
+    </style>
 </head>
 
-<body >
-<!-- Main Container -->
+<body>
 <div class="main">
     <!-- Header Section -->
     <header data-role="Header" class="page-header">
         <!-- Logo -->
-        <img alt="logo" src="../imagen/logosinnombre15i1597-3rmf-1500h.png" class="page-image" />
+        <a href="index.html">
+            <img alt="logo" src="../imagen/logosinnombre15i1597-3rmf-1500h.png" class="page-image" />
+        </a>
 
         <!-- Navigation Links -->
         <div class="page-nav">
-            <span class="page-text">Mapa</span>
-            <span class="page-text01">Más Información</span>
-            <span class="page-text02">Sobre Nosotros</span>
+            <a href="index.html" class="page-text">Mapa</a>
+            <a href="informacion.html" class="page-text01">Más Información</a>
+            <a href="sobreNosotros.html" class="page-text02">Sobre Nosotros</a>
         </div>
 
         <!-- Buttons -->
         <div class="page-btn-group">
-            <button class="page-login button">Registrarse</button>
+            <button class="page-login button"><a href="registroCodo.html">Registrarse</a></button>
             <button class="page-register button">
             <span class="page-text03">
-              <span>Iniciar Sesión</span>
+              <a href="InicioSesion.html"> Iniciar Sesión</a>
               <br />
             </span>
             </button>
@@ -64,32 +57,25 @@
     <div data-role="MobileMenu" class="page-mobile-menu">
         <div class="page-nav1">
             <div class="page-container1">
-                <img alt="image" src="../imagen/logosinnombre15i1597-3rmf-1500h.png" class="page-image1" />
-                <div data-role="CloseMobileMenu" class="page-menu-close">
-                    <svg viewBox="0 0 1024 1024" class="page-icon2">
-                        <path d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"></path>
-                    </svg>
-                </div>
+                <a href="index.html">
+                    <img alt="logo" src="../imagen/logosinnombre15i1597-3rmf-1500h.png" class="page-image" />
+                </a>          <div data-role="CloseMobileMenu" class="page-menu-close">
+                <svg viewBox="0 0 1024 1024" class="page-icon2">
+                    <path d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"></path>
+                </svg>
             </div>
-            <span class="page-text06">Mapa</span>
-            <span class="page-text07">Más Información</span>
-            <span class="page-text08">Sobre Nosotros</span>
-            <span class="page-text09">Registrarse</span>
-            <span class="page-text10">Iniciar Sesión</span>
+            </div>
+            <a href="index.html" class="page-text06">Mapa</a>
+            <a href="informacion.html" class="page-text07">Más Información</a>
+            <a href="sobreNosotros.html" class="page-text08">Sobre Nosotros</a>
+            <a href="registroCodo.html" class="page-text09">Registrarse</a>
+            <a href="InicioSesion.html" class="page-text10">Iniciar Sesión</a>
         </div>
     </div>
-</div> <!-- end of main container -->
-
-<!-- Map Container -->
-
-
-<!-- Search Container -->
-<!-- Search Container -->
+</div>
 
 <div class="container">
-
     <div class="search-bar">
-
         <div class="search-input">
             <div class="input-group">
                 <input type="text" class="form-control" placeholder="Buscar lugares">
@@ -132,83 +118,84 @@
         </div>
     </div>
 </div>
-<div class="main-container">
-    <!-- Sidebar with text and progress bar -->
-    <div class="sidebar">
-        <div class="sidebar-content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor risus vitae ligula fermentum, in tempus lectus hendrerit.</p>
-            <div class="progress">
-                <div class="progress-bar bg-success" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+
+<div class="container">
+    <div class="row">
+        <!-- Información a la izquierda -->
+        <div class="col-md-4">
+            <div class="info-container">
+                <div class="co2-info">
+                    <p>La concentración de CO2 en el ambiente es baja en tu zona</p>
+                    <div class="progress">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+                    </div>
+                </div>
+
+                <div class="today-co2-info mt-3">
+                    <p>Tu Concentración de CO2 de hoy:</p>
+                    <div class="co2-value-container bg-secondary text-white">
+                        <p>400ppm</p>
+                    </div>
+                </div>
+
+                <div class="temperature-info mt-3">
+                    <p>Temperatura actual: 20ºC</p>
+                </div>
             </div>
-            <!-- Additional content in the sidebar -->
-            <div class="square-info">
-                <!-- Content for the first square -->
-            </div>
-            <div class="square-info">
-                <!-- Content for the second square -->
+        </div>
+
+
+        <!-- Mapa a la derecha -->
+        <div class="col-md-8">
+            <div id="map">
+                <!-- Mapa aquí -->
             </div>
         </div>
     </div>
-
-<div id="map">
 </div>
 
-
-<!-- Checkbox Container -->
 <div id="checkbox-container">
     Baja<input type="checkbox" id="baja" name="nivel" value="baja" onchange="pintar()">
     Media<input type="checkbox" id="media" name="nivel" value="media" onchange="pintar()">
     Alta<input type="checkbox" id="alta" name="nivel" value="alta" onchange="pintar()">
 </div>
 
-<!-- JavaScript Section -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
-
 <script>
-    // Inicializar el selector de fecha y hora con datetimepicker
     $('#datetimepickerStart, #datetimepickerEnd').datetimepicker({
         format: 'Y-m-d H:i',
         step: 30,
     });
 
-    // Función para abrir el calendario al hacer clic en el icono
     function openCalendar(targetInputId) {
         $('#' + targetInputId).datetimepicker('show');
     }
 
-    // Manejar el clic en el icono de búsqueda si se desea realizar alguna acción
     $('#search-icon').on('click', function () {
-        // Agrega aquí el código que deseas ejecutar al hacer clic en el icono de búsqueda
+        // Código de búsqueda aquí si es necesario
     });
 </script>
 
-<!-- Other scripts and libraries -->
 <script src="./js/mapa.js"></script>
 <script src="./js/server.js"></script>
-<script async
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADW33LRTXZSEmLMv8ebiwK8Dtb9gDsg5Y&libraries=visualization&callback=centrarmapa">
-</script>
+<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADW33LRTXZSEmLMv8ebiwK8Dtb9gDsg5Y&libraries=visualization&callback=centrarmapa"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        // Mobile menu handling
         const burgerIcon = document.querySelector('.page-burger-menu');
         const menuContainer = document.querySelector('.page-mobile-menu');
         const closeIcon = document.querySelector('.page-menu-close');
 
-        // Toggle mobile menu on burger icon click
         burgerIcon.addEventListener('click', function () {
             menuContainer.style.display = (menuContainer.style.display === 'none' || menuContainer.style.display === '') ? 'flex' : 'none';
         });
 
-        // Close mobile menu on close icon click
         closeIcon.addEventListener('click', function () {
             menuContainer.style.display = 'none';
         });
 
-        // Close mobile menu on window resize (when width >= 767)
         window.addEventListener('resize', function () {
             if (window.innerWidth >= 767) {
                 menuContainer.style.display = 'none';
@@ -216,11 +203,10 @@
         });
     });
 </script>
+
 <script>
-    // Agrega un evento de clic al icono de la gráfica
     document.getElementById('botonsico').addEventListener('click', function () {
-        // Abre la nueva página HTML al hacer clic en el icono
-        window.location.href = 'grafica.html';
+        window.location.href = 'graficaUser.html';
     });
 </script>
 </body>

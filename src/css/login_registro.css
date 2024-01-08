@@ -183,8 +183,9 @@ h2 {
   padding: 0;
   font-weight: bold;
   color: #222;
-  font-family: Poppins;
-  font-size: 36px; }
+  font-family: 'Poppins', sans-serif; /* Cambiado a Poppins */
+  font-size: 36px;
+}
 
 .main {
   background: #f8f8f8;
@@ -196,9 +197,9 @@ h2 {
 body {
   line-height: 1.8;
   color: #222;
-  background: #f8f8f8;
+  background: #f8f8f8; /* Cambiado a gris claro */
   font-weight: 400;
-  font-family: Poppins;
+  font-family: 'Poppins', sans-serif; /* Cambiado a Poppins */
 }
 
 .container {
@@ -216,6 +217,8 @@ body {
   -o-border-radius: 20px;
   -ms-border-radius: 20px;
   font-size: 14px;
+  margin-top: 70px;
+  font-family: 'Poppins', sans-serif;
 
 
 }
@@ -611,3 +614,15 @@ html{
   margin-bottom: 20px;
 }
 /*# sourceMappingURL=style.css.map */
+.sign-in {
+  background: #f8f8f8;
+  width: 100vw; /* Set width to 100% of the viewport width */
+  display: flex; /* Use flexbox to center content */
+
+}
+.signup {
+  background: #f8f8f8;
+  width: 100vw; /* Set width to 100% of the viewport width */
+  display: flex; /* Use flexbox to center content */
+
+}

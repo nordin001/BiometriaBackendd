@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cambiar Contraseña</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="../fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="../css/login_registro.css">
+    <link rel="stylesheet" href="../css/style.css" />
+    <link href="../css/navbar.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" data-tag="font" />
+</head>
+<body onload="comprobarsesion()">
+
+
+    <section class="sign-in">
+        <div class="container">
+            <div class="signin-content">
+                <div class="signin-image">
+                    <figure><img src="../imagen/contraseña.svg" alt="sign up image"></figure>
+
+                </div>
+                <div class="signin-form">
+                    <h2 >Cambiar Contraseña</h2>
+                    <div id="textillo">
+                        <a>Cambia tu contraseña regularmente para una experiencia en línea más segura.</a>
+                    </div>
+                    <form method="POST" class="register-form" id="login-form">
+
+                        <div class="form-group">
+                            <label for="nuevacontrasenya"><i class="zmdi zmdi-lock"></i></label>
+                            <input type="text" name="nuevacontrasenya" id="nuevacontrasenya" placeholder="Nueva contraseña"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmarcontrasenya"><i class="zmdi zmdi-lock"></i></label>
+                            <input type="text" name="confirmarcontrasenya" id="confirmarcontrasenya" placeholder="Confirmar contraseña"/>
+                        </div>
+                        <div class="form-group form-button">
+                            <input type="button" name="signin" id="signin" class="form-submit" value="Cambiar contraseña" onclick="actualizarusuario()"/>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<!-- JS -->
+<!--<script src="vendor/jquery/jquery.min.js"></script>-->
+<script src="./js/server.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Mobile menu handling
+        const burgerIcon = document.querySelector('.page-burger-menu');
+        const menuContainer = document.querySelector('.page-mobile-menu');
+        const closeIcon = document.querySelector('.page-menu-close');
+
+        // Toggle mobile menu on burger icon click
+        burgerIcon.addEventListener('click', function () {
+            menuContainer.style.display = (menuContainer.style.display === 'none' || menuContainer.style.display === '') ? 'flex' : 'none';
+        });
+
+        // Close mobile menu on close icon click
+        closeIcon.addEventListener('click', function () {
+            menuContainer.style.display = 'none';
+        });
+
+        // Close mobile menu on window resize (when width >= 767)
+        window.addEventListener('resize', function () {
+            if (window.innerWidth >= 767) {
+                menuContainer.style.display = 'none';
+            }
+        });
+    });
+</script>
+</body>
+</html>

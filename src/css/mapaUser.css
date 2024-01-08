@@ -180,10 +180,11 @@ body {
 
 /* Styles for the sidebar */
 .sidebar {
-    width: 15%;
+    width: 70%; /* Ajusta el porcentaje según tus necesidades */
     background-color: #fff;
     padding: 20px;
 }
+
 
 .sidebar-content {
     margin-bottom: 20px;

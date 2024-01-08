@@ -1,33 +1,89 @@
 <!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>admin</title>
+    <!-- Agrega la referencia a Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
-<body onload="admin()">
+<body><!onload="admin()">
+<div class="container mt-4">
     <h2 onload="listaUsuarios()">Administración de usuarios</h2>
     <div id="listaUsuarios">
-        <input id="buscador" type="text" placeholder="Buscar por nombre o correo" oninput="filtrarUsuarios()">
-        <table id="tablaUsuario">
+        <input id="buscador" type="text" class="form-control mb-2" placeholder="Buscar por nombre o correo" oninput="filtrarUsuarios()">
+        <!-- Utiliza la clase 'table' de Bootstrap para hacer una tabla bonita -->
+        <table class="table table-striped">
             <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Teléfono</th>
-                    <th>Correo</th>
-                    <th>Acciones</th>
-                </tr>
+            <tr>
+                <th>Nombre</th>
+                <th>Teléfono</th>
+                <th>Correo</th>
+                <th>Acciones</th>
+            </tr>
             </thead>
             <tbody id="listado-Usuarios">
+            <tr>
+                <td>John Doe</td>
+                <td>(123) 456-7890</td>
+                <td>john.doe@example.com</td>
+                <td>
+                    <!-- Aquí puedes agregar botones de acciones, por ejemplo -->
+                    <button class="btn btn-danger btn-sm">Eliminar</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Jane Smith</td>
+                <td>(456) 789-0123</td>
+                <td>jane.smith@example.com</td>
+                <td>
+                    <button class="btn btn-danger btn-sm">Eliminar</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Jane Smith</td>
+                <td>(456) 789-0123</td>
+                <td>jane.smith@example.com</td>
+                <td>
+                    <button class="btn btn-danger btn-sm">Eliminar</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Jane Smith</td>
+                <td>(456) 789-0123</td>
+                <td>jane.smith@example.com</td>
+                <td>
+                    <button class="btn btn-danger btn-sm">Eliminar</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Jane Smith</td>
+                <td>(456) 789-0123</td>
+                <td>jane.smith@example.com</td>
+                <td>
+                    <button class="btn btn-danger btn-sm">Eliminar</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Jane Smith</td>
+                <td>(456) 789-0123</td>
+                <td>jane.smith@example.com</td>
+                <td>
+                    <button class="btn btn-danger btn-sm">Eliminar</button>
+                </td>
+            </tr>
+            <!-- Puedes agregar más filas según sea necesario -->
             </tbody>
         </table>
     </div>
 
-    <br>
-    <br>
-    <a href="landing.html">Landing</a>
-    
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="./js/server.js"></script>
-    <script src="./js/listaUsuarios.js"></script>
+</div>
+
+<!-- Agrega la referencia a Bootstrap JS y Popper.js antes de tu script personalizado -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="./js/server.js"></script>
+<script src="./js/listaUsuarios.js"></script>
 </body>
 </html>
