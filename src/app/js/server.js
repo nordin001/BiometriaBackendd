@@ -1,3 +1,4 @@
+
 //-----------------------------------------------------------------------------------------------------------
 //              recuperarprueba()
 //-----------------------------------------------------------------------------------------------------------
@@ -127,8 +128,8 @@ function actualizarusuario() {
 function login() {
     $(document).ready(function () {
 
-        const email = $('#email').val();
-        const contrasenya = $('#contrasenya').val();
+        const email = $('#your_name').val();
+        const contrasenya = $('#your_pass').val();
 
         $.ajax({
             url: '../api/login.php', // Ruta al script PHP que maneja el inicio de sesión
@@ -143,7 +144,7 @@ function login() {
                         window.location.href = "admin.html";
                     }
                     else {
-                        window.location.href = "landing.html";
+                        window.location.href = "index.html";
                     }
                     //alert(data.message); // Display the success message
                 } else {
@@ -295,6 +296,76 @@ async function recuperarcontrasenya() {
     });
 }
 
+async function recuperarUsuarioSonda(email)
+{
+    return new Promise((resolve, reject) => {
+        $.ajax({
+            url: '../api/recuperusuariosonda.php',
+            type: 'GET',
+            data: { email: email },
+            dataType: 'json',
+            success: function (data) {
+                resolve(data);
+            },
+            error: function () {
+                console.log('Error al obtener el valor.');
+                console.log(arguments);
+                reject(); // Rechaza la promesa si hay un error
+            }
+        });
+    });
+}
+
+async function guardarMedicion(instante,latitud,longitud,valor,idcontaminante)
+{
+     $.ajax({
+            url: '../api/guardarmedicion.php', // Ruta al script PHP
+            type: 'POST',
+            data: { instante: instante, latitud: latitud, longitud: longitud,valor: valor, idcontaminante: idcontaminante  },
+            dataType: 'json',
+            success: async function (data) {
+               
+            },
+            error: function () {
+                console.log('Error al obtener el valor.');
+                console.log(arguments);
+            }
+        });
+}
+
+async function guardarSondaMedicion(idsonda,idmedicion)
+{
+    $.ajax({
+        url: '../api/guardarsondamedicion.php', // Ruta al script PHP
+        type: 'POST',
+        data: { idsonda: idsonda, idmedicion: idmedicion },
+        dataType: 'json',
+        success: async function (data) {
+           
+        },
+        error: function () {
+            console.log('Error al obtener el valor.');
+            console.log(arguments);
+        }
+    });
+}
+
+async function actualizarUsuarioMedicion(email,idmedicion){
+    $.ajax({
+        url: '../api/actualizarusuariomedicion.php', // Ruta al script PHP
+        type: 'POST',
+        data: { email: email, idmedicion: idmedicion },
+        dataType: 'json',
+        success: async function (data) {
+           
+        },
+        error: function () {
+            console.log('Error al obtener el valor.');
+            console.log(arguments);
+        }
+    });
+}
+
 async function recuperartodasmedicionesusuario(userId) {
     return new Promise((resolve, reject) => {
         $.ajax({
@@ -428,6 +499,20 @@ async function comprobarsesion() {
     });
 }
 
+async function comprobarsesionusuario() {
+    $(document).ready(async function () {
+
+        // Hacer la solicitud al servidor
+        const userId = await obtenerUserId();
+        if (userId == null) {
+            window.location.href = "InicioSesion.html";
+        }
+        else {
+            return;
+        }
+    });
+}
+
 
 //-------------------------------------------------------------------------------------------------------
 //        email:text -> enviarcorreocontrasenya()
@@ -464,11 +549,12 @@ async function enviarcorreocontrasenya() {
 async function enviarcorreoverificar() {
     $(document).ready(async function () {
         var email = document.getElementById('email').value;
-        var nombre = document.getElementById('nombre').value;
-        var contrasenya = document.getElementById('contrasenya').value;
-        var telefono = document.getElementById('telefono').value;
-        var confirmarcontrasenya = document.getElementById('confirmarcontrasenya').value;
-        var terminosCheckbox = document.getElementById("terminos");
+        var nombre = document.getElementById('name').value;
+        var contrasenya = document.getElementById('pass').value;
+        var telefono = document.getElementById('telef').value;
+        var confirmarcontrasenya = document.getElementById('re_pass').value;
+        var terminosCheckbox = document.getElementById("agree-term");
+
 
         var codigo = Math.floor(10000000 + Math.random() * 90000000);
         var numeroCodificado = btoa(codigo.toString());
@@ -552,62 +638,62 @@ async function admin() {
 //Dom interaction
 function getFormData() {
     return {
-      email: document.getElementById('email').value,
-      nombre: document.getElementById('nombre').value,
-      contrasenya: document.getElementById('contrasenya').value,
-      telefono: document.getElementById('telefono').value,
-      confirmarcontrasenya: document.getElementById('confirmarcontrasenya').value
+        email: document.getElementById('email').value,
+        nombre: document.getElementById('nombre').value,
+        contrasenya: document.getElementById('contrasenya').value,
+        telefono: document.getElementById('telefono').value,
+        confirmarcontrasenya: document.getElementById('confirmarcontrasenya').value
     };
-  }
+}
 
 //validation function
 function validateForm(formData) {
     if (formData.email === "" || formData.nombre === "" || formData.contrasenya === "" || formData.telefono === "" || formData.confirmarcontrasenya === "") {
-      alert("Por favor, complete todos los campos.");
-      return false;
+        alert("Por favor, complete todos los campos.");
+        return false;
     }
-  
+
     if (formData.contrasenya !== formData.confirmarcontrasenya) {
-      alert("La confirmación de la contraseña no coincide.");
-      return false;
+        alert("La confirmación de la contraseña no coincide.");
+        return false;
     }
-  
+
     return true;
-  }
+}
 
-  //Api call function
-  async function makeApiCall(formData) {
+//Api call function
+async function makeApiCall(formData) {
     try {
-      const response = await $.ajax({
-        url: '../api/registro.php',
-        type: 'POST',
-        data: { email: formData.email, nombreyapellidos: formData.nombre, contrasenya: formData.contrasenya, telefono: formData.telefono },
-        dataType: 'json'
-      });
-  
-      alert("El usuario se creo correctamente");
-      window.location.href = "login.html";
-    } catch (error) {
-      console.error('Error al obtener el valor.', error);
-    }
-  }
-  //registro2
-  function registro2() {
-    $(document).ready(function () {
-      const formData = getFormData();
-  
-      if (!validateForm(formData)) {
-        return;
-      }
-  
-      makeApiCall(formData);
-    });
-  }
-  
-  
+        const response = await $.ajax({
+            url: '../api/registro.php',
+            type: 'POST',
+            data: { email: formData.email, nombreyapellidos: formData.nombre, contrasenya: formData.contrasenya, telefono: formData.telefono },
+            dataType: 'json'
+        });
 
-  
-  
+        alert("El usuario se creo correctamente");
+        window.location.href = "login.html";
+    } catch (error) {
+        console.error('Error al obtener el valor.', error);
+    }
+}
+//registro2
+function registro2() {
+    $(document).ready(function () {
+        const formData = getFormData();
+
+        if (!validateForm(formData)) {
+            return;
+        }
+
+        makeApiCall(formData);
+    });
+}
+
+
+
+
+
 
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -616,10 +702,10 @@ function validateForm(formData) {
 
 const addNumbers = (a, b) => {
     return a + b;
-  };
+};
 
-  //es importante meter las funciones que vamos a usar aqui
-  module.exports = {
+//es importante meter las funciones que vamos a usar aqui
+module.exports = {
     addNumbers,
     registro,
     getFormData,
@@ -627,4 +713,4 @@ const addNumbers = (a, b) => {
     makeApiCall,
     registro2
 
-  };
+};

@@ -5,77 +5,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Usuario</title>
-    <!-- Font Icon -->
-    <link rel="stylesheet" href="../fonts/material-icon/css/material-design-iconic-font.min.css">
+ <!-- Font Icon -->
+ <link rel="stylesheet" href="../fonts/material-icon/css/material-design-iconic-font.min.css">
 
-    <!-- Main css -->
-    <link rel="stylesheet" href="../css/login_registro.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha256-XXXXXX" crossorigin="anonymous" />
-    <link href="../css/style.css" rel="stylesheet" />
-    <link href="../css/navbar.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css">
+ <!-- Main css -->
+ <link rel="stylesheet" href="../css/login_registro.css">
+ <link rel="stylesheet" href="../css/style.css" />
+ <link href="../css/navbar.css" rel="stylesheet" />
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" data-tag="font" />
+ <link rel="stylesheet" href="../fonts/material-icon/css/material-design-iconic-font.min.css">
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+ <!-- Include Stylesheets -->
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
 
 
 </head>
 
 <body onload="comprobarsesion()">
 
-<div class="main">
-    <!-- Header Section -->
-    <header data-role="Header" class="page-header">
-        <!-- Logo -->
-        <a href="index.html">
+    <div class="main">
+        <!-- Header Section -->
+        <header data-role="Header" class="page-header">
+          <!-- Logo -->
+          <a href="index.html">
             <img alt="logo" src="../imagen/logosinnombre15i1597-3rmf-1500h.png" class="page-image" />
-        </a>
-
-        <!-- Navigation Links -->
-        <div class="page-nav">
+          </a>
+    
+          <!-- Navigation Links -->
+          <div class="page-nav">
             <a href="index.html" class="page-text">Mapa</a>
             <a href="informacion.html" class="page-text01">Más Información</a>
             <a href="sobreNosotros.html" class="page-text02">Sobre Nosotros</a>
-        </div>
-
-        <!-- Buttons -->
-        <div class="page-btn-group">
+          </div>
+    
+          <!-- Buttons -->
+          <div class="page-btn-group">
             <button class="page-login button"><a href="registroCodo.html">Registrarse</a></button>
             <button class="page-register button">
-            <span class="page-text03">
-              <a href="InicioSesion.html"> Iniciar Sesión</a>
-              <br />
-            </span>
+              <span class="page-text03">
+                <a href="InicioSesion.html"> Iniciar Sesión</a>
+                <br />
+              </span>
             </button>
-        </div>
-
-        <!-- Burger Menu Icon -->
-        <div data-role="BurgerMenu" class="page-burger-menu">
+          </div>
+    
+          <!-- Burger Menu Icon -->
+          <div data-role="BurgerMenu" class="page-burger-menu">
             <svg viewBox="0 0 1024 1024" class="page-icon">
-                <path d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"></path>
+              <path
+                d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z">
+              </path>
             </svg>
-        </div>
-    </header>
-
-    <!-- Mobile Menu -->
-    <div data-role="MobileMenu" class="page-mobile-menu">
-        <div class="page-nav1">
+          </div>
+        </header>
+    
+        <!-- Mobile Menu -->
+        <div data-role="MobileMenu" class="page-mobile-menu">
+          <div class="page-nav1">
             <div class="page-container1">
-                <a href="index.html">
-                    <img alt="logo" src="../imagen/logosinnombre15i1597-3rmf-1500h.png" class="page-image" />
-                </a>          <div data-role="CloseMobileMenu" class="page-menu-close">
+              <a href="index.html">
+                <img alt="logo" src="../imagen/logosinnombre15i1597-3rmf-1500h.png" class="page-image" />
+              </a>
+              <div data-role="CloseMobileMenu" class="page-menu-close">
                 <svg viewBox="0 0 1024 1024" class="page-icon2">
-                    <path d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"></path>
+                  <path d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z">
+                  </path>
                 </svg>
-            </div>
+              </div>
             </div>
             <a href="index.html" class="page-text06">Mapa</a>
             <a href="informacion.html" class="page-text07">Más Información</a>
             <a href="sobreNosotros.html" class="page-text08">Sobre Nosotros</a>
             <a href="registroCodo.html" class="page-text09">Registrarse</a>
             <a href="InicioSesion.html" class="page-text10">Iniciar Sesión</a>
+          </div>
         </div>
-    </div>
-</div> <!-- end of main container -->
-
+      </div>
     <!-- Sign up form -->
     <section class="signup">
         <div class="container">
@@ -104,14 +112,26 @@
                             <input type="password" name="confirmarcontrasenya" id="re_pass"
                                    placeholder="Confirmar contraseña" />
                         </div>
+
+                                                
+                        <!-- Texto personalizado de términos y privacidad -->
+                        <div class="form-group dropdown">
+                            <p><strong><a href="#" class="dropdown-toggle" onclick="toggleTerms()">Términos y Privacidad</a></strong></p>
+                            <div class="dropdown-content" id="termsContent">
+                                <p>Términos y Privacidad  Bienvenido a nuestro servicio. Al utilizarlo, aceptas los siguientes términos y condiciones. Tu privacidad es importante para nosotros. Recopilamos información personal para mejorar tu experiencia y brindar un servicio personalizado. No compartiremos tus datos con terceros sin tu consentimiento, a menos que sea requerido por ley.  Utilizamos cookies para mejorar la funcionalidad del sitio y recopilar datos de uso anónimos. Puedes optar por no recibir comunicaciones promocionales. No nos hacemos responsables por el contenido de enlaces externos. Siempre protegemos tus datos, pero no podemos garantizar la seguridad absoluta.\n\nAl utilizar nuestro servicio, aceptas eximirnos de cualquier responsabilidad por pérdida o daño. Si tienes alguna pregunta, contáctanos. Al continuar, aceptas estos términos y condiciones.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Checkbox para aceptar los términos y condiciones -->
                         <div class="form-group">
                             <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
-                            <label for="agree-term" class="label-agree-term"><span><span></span></span>Acepto los
-                                términos y condiciones</label>
+                            <label for="agree-term" class="label-agree-term">
+                                <span><span></span></span>Acepto los términos y condiciones
+                            </label>
                         </div>
+                        
                         <div class="form-group form-button">
-                            <input type="submit" name="signup" id="signup" class="form-submit" value="Registrarse"
-                                   onclick="enviarcorreoverificar()" />
+                            <input type="button" name="signup" id="signup" class="form-submit" value="Registrarse" onclick="enviarcorreoverificar()" />
                         </div>
                     </form>
                 </div>
@@ -126,7 +146,24 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="./js/server.js"></script>
-<script>
+
+  <!-- Other scripts and libraries -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="./js/mapa.js"></script>
+  <script src="./js/server.js"></script>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+  <script>
+    function toggleTerms() {
+        var termsContent = document.getElementById('termsContent');
+        termsContent.style.display = (termsContent.style.display === 'none' || termsContent.style.display === '') ? 'block' : 'none';
+    }
+    </script>
+
+  <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADW33LRTXZSEmLMv8ebiwK8Dtb9gDsg5Y&libraries=visualization&callback=centrarmapa">
+    </script>
+  <script>
     document.addEventListener('DOMContentLoaded', function () {
         // Mobile menu handling
         const burgerIcon = document.querySelector('.page-burger-menu');
@@ -151,6 +188,61 @@
         });
     });
 </script>
+
+<script>
+    // Función para comprobar la sesión
+    async function comprobarSesion() {
+        const userId = await obtenerUserId();
+        if(userId!=null)
+        return true;
+        else
+        return false;
+    }
+  
+    // Función para cerrar la sesión
+  
+    // Función para actualizar la interfaz del header según la sesión
+    async function actualizarInterfaz() {
+      const botonIniciarSesion = document.querySelector('.page-text03 a');
+      const botonRegistrarse = document.querySelector('.page-login a');
+      const textoRegistrarseMobile = document.querySelector('.page-text09');
+      const textoIniciarSesionMobile = document.querySelector('.page-text10');
+      const enlaceMapa = document.querySelector('.page-text');
+
+      if (await comprobarSesion()) {
+        // Usuario autenticado
+        botonIniciarSesion.textContent = 'Cerrar Sesión';
+        botonRegistrarse.innerHTML = '<i class="fas fa-user" style="color: #333333; font-size: larger; margin-right: 5px; vertical-align: middle;"></i> ';
+        botonRegistrarse.href = 'perfil.html';
+  
+        // Actualizar textos en el navbar responsive
+        textoRegistrarseMobile.innerHTML = '<i class="fas fa-user" style="color: #333333; font-size: larger; margin-right: 5px; vertical-align: middle;"></i> Perfil';
+        textoRegistrarseMobile.href = 'perfil.html';
+        textoIniciarSesionMobile.textContent = 'Cerrar Sesión';
+        botonIniciarSesion.href = "../api/cerrarsesion.php";
+  
+        // Cambiar la dirección del enlace "Mapa"
+        enlaceMapa.href = 'Index.html';
+      } else {
+        // Usuario no autenticado
+        botonIniciarSesion.textContent = 'Iniciar Sesión';
+        botonIniciarSesion.href = 'InicioSesion.html';
+        botonRegistrarse.innerHTML = 'Registrarse';
+        botonRegistrarse.href = 'registroCodo.html';
+  
+        // Restaurar textos en el navbar responsive
+        textoRegistrarseMobile.innerHTML = 'Registrarse';
+        textoRegistrarseMobile.href = 'registroCodo.html';
+        textoIniciarSesionMobile.textContent = 'Iniciar Sesión';
+        textoIniciarSesionMobile.href = 'InicioSesion.html';
+  
+        // Restaurar la dirección del enlace "Mapa"
+        enlaceMapa.href = 'index.html';
+      }
+    }
+    // Llama a la función para actualizar la interfaz cuando se cargue la página
+    document.addEventListener('DOMContentLoaded', actualizarInterfaz);
+  </script>
 </body>
 
 </html>

@@ -43,9 +43,9 @@ require '../phpmailer/src/SMTP.php';
             $mail->setFrom('ozounagti@gmail.com');
             $mail->addAddress($email);
             $mail->isHTML(true);
-            $mail->Subject  = 'Cambiar contrasenya Ozozuna';
+            $mail->Subject  = 'Cambiar contrasenya Ozouna';
             $mail_template="<h2>Cambiar contraseña</h2>
-                            <h3>Introduce el siguiente codigo en la aplicación para cambiar la contarseña</h3>
+                            <h3>Introduce el siguiente código en la aplicación para cambiar la contraseña.</h3>
                             <br/><br/>
                             <h1>$decryptedText</h1>";
             $mail->Body  = $mail_template;

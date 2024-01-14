@@ -21,15 +21,19 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css">
-  <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha256-TU_INTEGRIDAD_CORRECTA" crossorigin="anonymous" />
+
+  
+
+
+
 
 </head>
 
-<body >
-<!-- Main Container -->
-<div class="main">
-  <!-- Header Section -->
+<body>
+  <!-- Main Container -->
+  <div class="main">
+    <!-- Header Section -->
     <header data-role="Header" class="page-header">
       <!-- Logo -->
       <a href="index.html">
@@ -47,17 +51,19 @@
       <div class="page-btn-group">
         <button class="page-login button"><a href="registroCodo.html">Registrarse</a></button>
         <button class="page-register button">
-            <span class="page-text03">
-              <a href="InicioSesion.html"> Iniciar Sesión</a>
-              <br />
-            </span>
+          <span class="page-text03">
+            <a href="InicioSesion.html"> Iniciar Sesión</a>
+            <br />
+          </span>
         </button>
       </div>
 
       <!-- Burger Menu Icon -->
       <div data-role="BurgerMenu" class="page-burger-menu">
         <svg viewBox="0 0 1024 1024" class="page-icon">
-          <path d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"></path>
+          <path
+            d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z">
+          </path>
         </svg>
       </div>
     </header>
@@ -68,9 +74,11 @@
         <div class="page-container1">
           <a href="index.html">
             <img alt="logo" src="../imagen/logosinnombre15i1597-3rmf-1500h.png" class="page-image" />
-          </a>          <div data-role="CloseMobileMenu" class="page-menu-close">
+          </a>
+          <div data-role="CloseMobileMenu" class="page-menu-close">
             <svg viewBox="0 0 1024 1024" class="page-icon2">
-              <path d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"></path>
+              <path d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z">
+              </path>
             </svg>
           </div>
         </div>
@@ -81,138 +89,177 @@
         <a href="InicioSesion.html" class="page-text10">Iniciar Sesión</a>
       </div>
     </div>
-</div> <!-- end of main container -->
-
-<!-- Map Container -->
-
-
-<!-- Search Container -->
-<!-- Search Container -->
-
-<div class="container">
-
-  <div class="search-bar">
-
-    <div class="search-input">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Buscar lugares">
-        <div class="input-group-append">
-          <span class="input-group-text" id="search-icon"><i class="fa fa-search"></i></span>
-        </div>
-      </div>
-    </div>
-    <div class="date-picker">
-      <label for="datetimepickerStart"></label>
-      <div class="input-group">
-        <input type="text" class="form-control" id="datetimepickerStart" placeholder="Fecha inicial">
-        <div class="input-group-append" onclick="openCalendar('datetimepickerStart')">
-          <span class="input-group-text"><i class="fa fa-calendar"></i></span>
-        </div>
-      </div>
-    </div>
-    <div class="date-picker">
-      <label for="datetimepickerEnd"></label>
-      <div class="input-group">
-        <input type="text" class="form-control" id="datetimepickerEnd" placeholder="Fecha final">
-        <div class="input-group-append" onclick="openCalendar('datetimepickerEnd')">
-          <span class="input-group-text"><i class="fa fa-calendar"></i></span>
-        </div>
-      </div>
-    </div>
-    <div class="dropdown">
-      <select class="form-control">
-        <option value="opcion1">Opción 1</option>
-        <option value="opcion2">Opción 2</option>
-        <option value="opcion3">Opción 3</option>
-      </select>
-    </div>
-    <div id="botonsico">
-    <div class="icon-container">
-      <div class="rounded-icon">
-        <i class="fas fa-chart-bar icon"></i>
-      </div>
-    </div>
-    </div>
   </div>
-</div>
+
+  <!-- Map Container -->
 
 
-<div id="map">
-</div>
+  <!-- Search Container -->
+
+  <div class="container">
+
+    <div class="search-bar">
+
+      
+      <div class="date-picker">
+        <label for="datetimepickerStart"></label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="datetimepickerStart" placeholder="Fecha inicial"
+            onchange="pintar()">
+          <div class="input-group-append" onclick="openCalendar('datetimepickerStart')">
+            <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+          </div>
+        </div>
+      </div>
+      <div class="date-picker">
+        <label for="datetimepickerEnd"></label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="datetimepickerEnd" placeholder="Fecha final" onchange="pintar()">
+          <div class="input-group-append" onclick="openCalendar('datetimepickerEnd')">
+            <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+          </div>
+        </div>
+      </div>
+      <div class="dropdown">
+        <select class="form-control" id="contaminante" onchange="pintar()">
+          <option value="1">O3</option>
+          <option value="2">CO</option>
+          <option value="3">NO2</option>
+        </select>
+      </div>
+      <button id="descargar" onclick="descargarMapa()">Descargar Mapa</button>
+    </div>
+    
+  </div>
+
+  <div id="map-container">
+    <div id="map"></div>
+  </div>
+  </div>
 
 
-<!-- Checkbox Container -->
-<div id="checkbox-container">
-  Baja<input type="checkbox" id="baja" name="nivel" value="baja" onchange="pintar()">
-  Media<input type="checkbox" id="media" name="nivel" value="media" onchange="pintar()">
-  Alta<input type="checkbox" id="alta" name="nivel" value="alta" onchange="pintar()">
-</div>
+  <!-- Checkbox Container -->
+  <div id ="checkbox-container">
+    Baja<input type="checkbox" id="baja" name="nivel" value="baja" onchange="pintar()">
+    Media<input type="checkbox" id="media" name="nivel" value="media" onchange="pintar()">
+    Alta<input type="checkbox" id="alta" name="nivel" value="alta" onchange="pintar()">
+  </div>
 
-<!-- JavaScript Section -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
+  <!-- JavaScript Section -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
 
-<script>
-  // Inicializar el selector de fecha y hora con datetimepicker
-  $('#datetimepickerStart, #datetimepickerEnd').datetimepicker({
-    format: 'Y-m-d H:i',
-    step: 30,
-  });
-
-  // Función para abrir el calendario al hacer clic en el icono
-  function openCalendar(targetInputId) {
-    $('#' + targetInputId).datetimepicker('show');
-  }
-
-  // Manejar el clic en el icono de búsqueda si se desea realizar alguna acción
-  $('#search-icon').on('click', function () {
-    // Agrega aquí el código que deseas ejecutar al hacer clic en el icono de búsqueda
-  });
-</script>
-
-<!-- Other scripts and libraries -->
-<script src="./js/mapa.js"></script>
-<script src="./js/server.js"></script>
-<script async
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADW33LRTXZSEmLMv8ebiwK8Dtb9gDsg5Y&libraries=visualization&callback=centrarmapa">
-</script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    // Mobile menu handling
-    const burgerIcon = document.querySelector('.page-burger-menu');
-    const menuContainer = document.querySelector('.page-mobile-menu');
-    const closeIcon = document.querySelector('.page-menu-close');
-
-    // Toggle mobile menu on burger icon click
-    burgerIcon.addEventListener('click', function () {
-      menuContainer.style.display = (menuContainer.style.display === 'none' || menuContainer.style.display === '') ? 'flex' : 'none';
+  <script>
+    // Inicializar el selector de fecha y hora con datetimepicker
+    $('#datetimepickerStart, #datetimepickerEnd').datetimepicker({
+      format: 'Y-m-d H:i',
+      step: 30,
     });
 
-    // Close mobile menu on close icon click
-    closeIcon.addEventListener('click', function () {
-      menuContainer.style.display = 'none';
-    });
+    // Función para abrir el calendario al hacer clic en el icono
+    function openCalendar(targetInputId) {
+      $('#' + targetInputId).datetimepicker('show');
+    }
 
-    // Close mobile menu on window resize (when width >= 767)
-    window.addEventListener('resize', function () {
-      if (window.innerWidth >= 767) {
-        menuContainer.style.display = 'none';
+    // Manejar el clic en el icono de búsqueda si se desea realizar alguna acción
+    $('#search-icon').on('click', function () {
+      // Agrega aquí el código que deseas ejecutar al hacer clic en el icono de búsqueda
+    });
+  </script>
+
+  <!-- Other scripts and libraries -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="./js/mapa.js"></script>
+  <script src="./js/server.js"></script>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+
+  <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADW33LRTXZSEmLMv8ebiwK8Dtb9gDsg5Y&libraries=visualization&callback=centrarmapa">
+    </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Mobile menu handling
+        const burgerIcon = document.querySelector('.page-burger-menu');
+        const menuContainer = document.querySelector('.page-mobile-menu');
+        const closeIcon = document.querySelector('.page-menu-close');
+
+        // Toggle mobile menu on burger icon click
+        burgerIcon.addEventListener('click', function () {
+            menuContainer.style.display = (menuContainer.style.display === 'none' || menuContainer.style.display === '') ? 'flex' : 'none';
+        });
+
+        // Close mobile menu on close icon click
+        closeIcon.addEventListener('click', function () {
+            menuContainer.style.display = 'none';
+        });
+
+        // Close mobile menu on window resize (when width >= 767)
+        window.addEventListener('resize', function () {
+            if (window.innerWidth >= 767) {
+                menuContainer.style.display = 'none';
+            }
+        });
+    });
+</script>
+
+<script>
+    // Función para comprobar la sesión
+    async function comprobarSesion() {
+        const userId = await obtenerUserId();
+        if(userId!=null)
+        return true;
+        else
+        return false;
+    }
+  
+    // Función para cerrar la sesión
+  
+    // Función para actualizar la interfaz del header según la sesión
+    async function actualizarInterfaz() {
+      const botonIniciarSesion = document.querySelector('.page-text03 a');
+      const botonRegistrarse = document.querySelector('.page-login a');
+      const textoRegistrarseMobile = document.querySelector('.page-text09');
+      const textoIniciarSesionMobile = document.querySelector('.page-text10');
+      const enlaceMapa = document.querySelector('.page-text');
+
+      if (await comprobarSesion()) {
+        // Usuario autenticado
+        botonIniciarSesion.textContent = 'Cerrar Sesión';
+        botonRegistrarse.innerHTML = '<i class="fas fa-user" style="color: #333333; font-size: larger; margin-right: 5px; vertical-align: middle;"></i> ';
+        botonRegistrarse.href = 'perfil.html';
+  
+        // Actualizar textos en el navbar responsive
+        textoRegistrarseMobile.innerHTML = '<i class="fas fa-user" style="color: #333333; font-size: larger; margin-right: 5px; vertical-align: middle;"></i> Perfil';
+        textoRegistrarseMobile.href = 'perfil.html';
+        textoIniciarSesionMobile.textContent = 'Cerrar Sesión';
+        botonIniciarSesion.href = "../api/cerrarsesion.php";
+  
+        // Cambiar la dirección del enlace "Mapa"
+        enlaceMapa.href = 'Index.html';
+      } else {
+        // Usuario no autenticado
+        botonIniciarSesion.textContent = 'Iniciar Sesión';
+        botonIniciarSesion.href = 'InicioSesion.html';
+        botonRegistrarse.innerHTML = 'Registrarse';
+        botonRegistrarse.href = 'registroCodo.html';
+  
+        // Restaurar textos en el navbar responsive
+        textoRegistrarseMobile.innerHTML = 'Registrarse';
+        textoRegistrarseMobile.href = 'registroCodo.html';
+        textoIniciarSesionMobile.textContent = 'Iniciar Sesión';
+        textoIniciarSesionMobile.href = 'InicioSesion.html';
+  
+        // Restaurar la dirección del enlace "Mapa"
+        enlaceMapa.href = 'index.html';
       }
-    });
-  });
-</script>
-<script>
-  // Agrega un evento de clic al icono de la gráfica
-  document.getElementById('botonsico').addEventListener('click', function () {
-    // Abre la nueva página HTML al hacer clic en el icono
-    window.location.href = 'grafica.html';
-  });
-</script>
-
-
-
+    }
+    // Llama a la función para actualizar la interfaz cuando se cargue la página
+    document.addEventListener('DOMContentLoaded', actualizarInterfaz);
+  </script>
 </body>
 
 </html>

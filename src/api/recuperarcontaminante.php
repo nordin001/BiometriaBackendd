@@ -6,9 +6,9 @@
     {
         require_once("db.php");
 
-        $id = $_GET['id'];
+        $idcontaminnate = $_GET['idcontaminnate'];
 
-        $query = "SELECT * FROM contaminantes WHERE id = '$id'";
+        $query = "SELECT * FROM contaminantes WHERE idcontaminnate = '$idcontaminnate'";
 
         $result = $mysql->query($query);
         

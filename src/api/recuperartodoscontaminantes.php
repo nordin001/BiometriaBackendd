@@ -1,27 +1,27 @@
 <?php
     //-------------------------------------------------------------------------------------------------------
-    //          email:text --> recuperarusuario() --> [email, nombreyapliidos, contrasenya]
+    //          id:R, recuperarcontaminante:R --> guardarusuario() --> [id,nombre]
     //-------------------------------------------------------------------------------------------------------
     if($_SERVER['REQUEST_METHOD'] == 'GET')
     {
         require_once("db.php");
 
-        $email = $_GET['email'];
-
-        $query = "SELECT * FROM usuariomedicion WHERE email = '$email'";
+        $query = "SELECT * FROM contaminantes";
 
         $result = $mysql->query($query);
         
+        $array = array();
         if($mysql->affected_rows > 0)
         {
             while($row = $result->fetch_assoc()) 
             {
-                $array = $row;
+                $array[] = $row;
             }
+
             echo json_encode($array);
         }else
         {
-            echo json_encode("Fallo");
+            echo "Fallo";
         }
 
         $result -> close();

@@ -7,5 +7,5 @@
   session_unset();
 
   session_destroy();
-  header('Location: ../app/login.html');
+  header('Location: ../app/InicioSesion.html');
 ?>

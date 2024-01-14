@@ -22,7 +22,7 @@
             echo json_encode($array);
         }else
         {
-            echo "Fallo";
+            echo  json_encode("Fallo");
         }
 
         $result -> close();

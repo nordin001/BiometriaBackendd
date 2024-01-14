@@ -9,7 +9,6 @@
         $hasta = date("Y-m-d H:i:s", strtotime($_GET['hasta']));
         $email = $_GET['email'];
     
-        // Consulta para obtener mediciones entre las fechas dadas y asociadas al usuario
         $query = "SELECT m.* 
                   FROM usuario u
                   JOIN usuariosonda us ON u.email = us.email
@@ -27,10 +26,9 @@
             }
             echo json_encode($array);
         } else {
-            echo "No se encontraron mediciones en ese rango de fechas para este usuario.";
+            echo json_encode(array());
         }
     
-        // Cerrar conexión y liberar recursos
         $result->close();
         $mysql->close();
     }

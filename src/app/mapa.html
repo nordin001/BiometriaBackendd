@@ -24,9 +24,14 @@
         <input type="checkbox" id="media" name="nivel" value="media" onchange="pintar()"> Media
         <input type="checkbox" id="alta" name="nivel" value="alta" onchange="pintar()"> Alta
         <label for="desde">Desde:</label>
-        <input type="datetime-local" id="desde" name="desde" onchange="pintar()">
+        <input type="datetime-local" id="datetimepickerStart" name="desde" onchange="pintar()">
         <label for="hasta">Hasta:</label>
-        <input type="datetime-local" id="hasta" name="hasta" onchange="pintar()">
+        <input type="datetime-local" id="datetimepickerEnd" name="hasta" onchange="pintar()">
+
+        <select class="form-control"  id="contaminante" onchange="pintar()">
+            <option value="1">O3</option>
+            <option value="2">CO2</option>
+          </select>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./js/mapa.js"></script>

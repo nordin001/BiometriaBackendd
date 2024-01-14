@@ -19,11 +19,11 @@
             {
                 $array[] = $row;
             }
+            echo json_encode($array);
         }else
         {
-            echo "Fallo";
+            echo json_encode(array());
         }
-        echo json_encode($array);
 
         $result -> close();
         $mysql -> close();

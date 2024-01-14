@@ -1,6 +1,6 @@
 <?php
     //-------------------------------------------------------------------------------------------------------
-    //          email:text --> recuperarusuario() --> [email, nombreyapliidos, contrasenya]
+    //          id:R --> recuperarmedicion() --> [id, instante, longitud, latitud, idcontaminante]
     //-------------------------------------------------------------------------------------------------------
     if($_SERVER['REQUEST_METHOD'] == 'GET')
     {
@@ -8,20 +8,21 @@
 
         $email = $_GET['email'];
 
-        $query = "SELECT * FROM usuariomedicion WHERE email = '$email'";
+        $query = "SELECT * FROM usuariosonda WHERE email = '$email'";
 
         $result = $mysql->query($query);
         
         if($mysql->affected_rows > 0)
-        {
+        {                                                                                               
             while($row = $result->fetch_assoc()) 
             {
                 $array = $row;
             }
+
             echo json_encode($array);
         }else
         {
-            echo json_encode("Fallo");
+            echo "Fallo";
         }
 
         $result -> close();
